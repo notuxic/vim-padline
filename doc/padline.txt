@@ -1,0 +1,135 @@
+*padline.txt* mappings to pad/unpad with empty lines
+
+Author: notuxic <notuxic@gmail.com>
+License: BSD 2-clause
+
+===============================================================================
+Contents                                                     *padline-contents*
+
+        Introduction...............|padline-introduction|
+		Features...................|padline-features|
+        Mappings...................|padline-mappings|
+        Commands...................|padline-commands|
+		API........................|padline-api|
+
+
+===============================================================================
+Introduction                                             *padline-introduction*
+
+While empty lines do not have any effect in most file formats, they do still
+carry semantic information. Empty lines are often used to group related lines
+together to improve readability. As such, we spend a noticeable amount adding
+and removing empty lines to group or regroup lines in our files. This plugin
+aims to make this common action a bit more convenient.
+
+
+===============================================================================
+Features                                                     *padline-features*
+
+*padline* adds mappings and commands to add or remove padding in the form of
+empty lines.
+
+It does not change
+  * cursor position
+  * jump list
+  * current change (ie. does not break dot-repeatability)
+or anything else except for the buffers content.
+This allows adding/removing padding in the middle of doing something else
+without getting any side-effects.
+
+
+===============================================================================
+Mappings                                                     *padline-mappings*
+
+<Plug>PadLineAbove                                   *padline-map-padlineabove*
+<Plug>PadLineBelow                                   *padline-map-padlinebelow*
+<Plug>PadLineAround                                 *padline-map-padlinearound*
+
+  Add empty lines above, below or around the current line.
+
+  Available for 'normal' and 'insert' mode. Take an optional count to pad with
+  `count` lines (instead of 1).
+
+
+<Plug>PadBlockAbove                                 *padline-map-padblockabove*
+<Plug>PadBlockBelow                                 *padline-map-padblockbelow*
+<Plug>PadBlockAround                               *padline-map-padblockaround*
+
+  Add empty lines above, below or around a visual selection.
+
+  Available for 'visual' mode. Take an optional count to pad with `count` lines
+  (instead of 1).
+
+
+<Plug>UnpadLineAbove                             *padline-map-unpad-line-above*
+<Plug>UnpadLineBelow                               *padline-map-unpadlinebelow*
+<Plug>UnpadLineAround                             *padline-map-unpadlinearound*
+
+  Remove the next occurrence of consecutive empty lines above, below or around
+  the current line.
+
+  Available for 'normal' and 'insert' mode. Take an optional count to remove
+  *at most* the next `count` consecutive empty lines (instead of 1).
+
+
+<Plug>UnpadBlockAbove                             *padline-map-unpadblockabove*
+<Plug>UnpadBlockBelow                             *padline-map-unpadblockbelow*
+<Plug>UnpadBlockAround                            *padline-map-unpadblockbelow*
+
+  Remove the next occurrence of consecutive empty lines above, below or around
+  a visual selection. Empty lines inside the selection remain unaffected.
+
+  Available for 'visual' mode. Take an optional count to remove *at most* the
+  next `count` consecutive empty lines (instead of 1).
+
+
+===============================================================================
+Commands                                                     *padline-commands*
+
+`[range]` PadAbove `[count]`                             *padline-cmd-padabove*
+`[range]` PadBelow `[count]`                             *padline-cmd-padbelow*
+`[range]` PadAround `[count]`                           *padline-cmd-padaround*
+
+  Add empty lines above, below or around a range `range`.
+
+  Take an optional count to pad with `count` lines (instead of 1). `range`
+  defaults to the current line.
+
+
+`[range]` UnpadAbove `[count]`                         *padline-cmd-unpadabove*
+`[range]` UnpadBelow `[count]`                         *padline-cmd-unpadbelow*
+`[range]` UnpadAround `[count]`                       *padline-cmd-unpadaround*
+
+  Remove the next occurrence of consecutive empty lines above, below or around
+  a range `range`. Empty lines inside the range remain unaffected.
+
+  Take an optional count to pad with `count` lines (instead of 1). `range`
+  defaults to the current line.
+
+
+===============================================================================
+API                                                               *padline-api*
+
+padline#PadLineAbove(linenr, count)                  *padline-api-padlineabove*
+padline#PadLineBelow(linenr, count)
+
+  Add *count* empty lines above/below the line *linenr*.
+
+
+padline#PadBlockAround(linenr1, linenr2, count)    *padline-api-padblockaround*
+
+  Add *count* empty lines above line *linenr1* and below line *linenr2*.
+
+
+padline#UnpadLineAbove(linenr, count)              *padline-api-unpadlineabove*
+padline#UnpadLineBelow(linenr, count)              *padline-api-unpadlineabove*
+
+  Remove the next occurrence of consecutive empty lines above/below the line
+  *linenr*, removing at most *count* lines.
+
+
+padline#UnpadBlockAround(linenr1, linenr2, count) *padline-api-unpadblockaround*
+
+  Remove the next occurrence of consecutive empty lines above line *linenr1*
+  and below line *linenr2*, removing at most *count* lines.
+
