@@ -23,5 +23,5 @@ Using `vim-plug`:
 Insert the following line in your `.vimrc` inside the `plug#begin(...)`/`plug#end()` block.
 
 ```
-Plug 'notuxic/vivm-padline'
+Plug 'notuxic/vim-padline'
 ```

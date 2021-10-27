@@ -7,10 +7,10 @@ License: BSD 2-clause
 Contents                                                     *padline-contents*
 
         Introduction...............|padline-introduction|
-		Features...................|padline-features|
+        Features...................|padline-features|
         Mappings...................|padline-mappings|
         Commands...................|padline-commands|
-		API........................|padline-api|
+        API........................|padline-api|
 
 
 ===============================================================================
