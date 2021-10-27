@@ -103,8 +103,8 @@ Commands                                                     *padline-commands*
   Remove the next occurrence of consecutive empty lines above, below or around
   a range `range`. Empty lines inside the range remain unaffected.
 
-  Take an optional count to pad with `count` lines (instead of 1). `range`
-  defaults to the current line.
+  Take an optional count to remove *at most* the next `count` consecutive
+  empty lines (instead of 1). `range` defaults to the current line.
 
 
 ===============================================================================
