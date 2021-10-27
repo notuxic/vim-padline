@@ -113,23 +113,23 @@ API                                                               *padline-api*
 padline#PadLineAbove(linenr, count)                  *padline-api-padlineabove*
 padline#PadLineBelow(linenr, count)
 
-  Add *count* empty lines above/below the line *linenr*.
+  Add *count* empty lines above/below the line *linenr* .
 
 
 padline#PadBlockAround(linenr1, linenr2, count)    *padline-api-padblockaround*
 
-  Add *count* empty lines above line *linenr1* and below line *linenr2*.
+  Add *count* empty lines above line *linenr1* and below line *linenr2* .
 
 
 padline#UnpadLineAbove(linenr, count)              *padline-api-unpadlineabove*
 padline#UnpadLineBelow(linenr, count)              *padline-api-unpadlineabove*
 
   Remove the next occurrence of consecutive empty lines above/below the line
-  *linenr*, removing at most *count* lines.
+  *linenr* , removing at most *count* lines.
 
 
 padline#UnpadBlockAround(linenr1, linenr2, count) *padline-api-unpadblockaround*
 
   Remove the next occurrence of consecutive empty lines above line *linenr1*
-  and below line *linenr2*, removing at most *count* lines.
+  and below line *linenr2* , removing at most *count* lines.
 
