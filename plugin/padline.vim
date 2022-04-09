@@ -27,7 +27,7 @@ nnoremap <unique> <silent> <Plug>PadLineBelow :<C-U>call padline#PadLineBelow(li
 nnoremap <unique> <silent> <Plug>PadLineAround :<C-U>call padline#PadBlockAround(line('.'), line('.'), v:count1)<CR>
 inoremap <unique> <silent> <Plug>PadLineAbove <C-R>=repeat('', padline#PadLineAbove(line('.'), 1))<CR>
 inoremap <unique> <silent> <Plug>PadLineBelow <C-R>=repeat('', padline#PadLineBelow(line('.'), 1))<CR>
-inoremap <unique> <silent> <Plug>PadLineAround <C-R>=repeat('', padline#PadBlockAround(line('.'), 1))<CR>
+inoremap <unique> <silent> <Plug>PadLineAround <C-R>=repeat('', padline#PadBlockAround(line('.'), line('.'), 1))<CR>
 vnoremap <unique> <silent> <Plug>PadBlockAbove :<C-U>call padline#PadLineAbove(line("'<"), v:count1)<CR>
 vnoremap <unique> <silent> <Plug>PadBlockBelow :<C-U>call padline#PadLineBelow(line("'>"), v:count1)<CR>
 vnoremap <unique> <silent> <Plug>PadBlockAround :<C-U>call padline#PadBlockAround(line("'<"), line("'>"), v:count1)<CR>
@@ -79,7 +79,7 @@ nnoremap <unique> <silent> <Plug>UnpadLineBelow :<C-U>call padline#UnpadLineBelo
 nnoremap <unique> <silent> <Plug>UnpadLineAround :<C-U>call padline#UnpadBlockAround(line('.'), line('.'), v:count1)<CR>
 inoremap <unique> <silent> <Plug>UnpadLineAbove <C-R>=repeat('', padline#UnpadLineAbove(line('.'), 1))<CR>
 inoremap <unique> <silent> <Plug>UnpadLineBelow <C-R>=repeat('', padline#UnpadLineBelow(line('.'), 1))<CR>
-inoremap <unique> <silent> <Plug>UnpadLineAround <C-R>=repeat('', padline#UnpadBlockAround(line('.'), 1))<CR>
+inoremap <unique> <silent> <Plug>UnpadLineAround <C-R>=repeat('', padline#UnpadBlockAround(line('.'), line('.'), 1))<CR>
 vnoremap <unique> <silent> <Plug>UnpadBlockAbove :<C-U>call padline#UnpadLineAbove(line("'<"), v:count1)<CR>
 vnoremap <unique> <silent> <Plug>UnpadBlockBelow :<C-U>call padline#UnpadLineBelow(line("'>"), v:count1)<CR>
 vnoremap <unique> <silent> <Plug>UnpadBlockAround :<C-U>call padline#UnpadBlockAround(line("'<"), line("'>"), v:count1)<CR>
